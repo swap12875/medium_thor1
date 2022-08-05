@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" style=" background-color:blanchedalmond ;" class="bodyBack">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Thor-contact us
+    </title>
+    <link rel="stylesheet" type="text/css" href="thor_style.css">
+</head>
+
+<body>
+    <div class="holder">
+        <fieldset>
+            <table style="width: 100%; border: none;">
+                <tr>
+                    <td style="vertical-align:bottom;">
+                        <div>
+                            <img class='biz-logo' src="stock/thor.jpg">
+                        </div>
+                    </td>
+                    <td class='right'>
+                        <label id="tag_line">
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <div align="center">
+            <img src="stock/cont.png" class="banner" alt="contact-us">
+            <br><br>
+            <h2>
+                <span class="heading2-text">
+                    <strong>
+                        Contact us
+                    </strong>
+                </span>
+            </h2>
+            <form style="border-style:ridge; width:70%; padding: 5px 15px 5px 15px">
+                <table align="center">
+                    <tr>
+                        <p id="feel_free_to_contact" class="about-contact-p">
+                        </p>
+                        <label class="form-label" style="font-size:120%">
+                            Get in touch with 'THOR'
+                            <br>
+                            Please feel free to contact us for any enquiry related to our services and feedback.
+                        </label>
+                        <div>
+                            <label class='outlined'>
+                                (Please fill up all mandatory fields marked with asterisk '*')
+                            </label>
+                        </div>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class='form-label' for="enter-Name">
+                                Name * :
+                            </label>
+                        </td>
+                        <td>
+                            <input id="name" class="form-input" type="text" placeholder="Please enter your name"
+                                required>
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class='form-label' for="enter-email">
+                                Email * :
+                            </label>
+                        </td>
+                        <td>
+                            <input id="email" class="form-input" type="email" placeholder="Please enter email" required>
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br>
+                            <label class='form-label' for="sub">
+                                Subject/Service :
+                            </label>
+                        </td>
+                        <td>
+                            <input class="form-input" type="text" id="sub_list" placeholder="Select subject"
+                                list="subjects-list" required onfocus="this.value=''" onchange="this.blur();" />
+                            <datalist id="subjects-list">
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <span class="normal-font">(Select any one service as subject from the list, else select
+                                'Others')
+                            </span>
+                        </td>
+                    </tr>
+                    <tr id="other_sub">
+                        <td id="other_subject_label" hidden>
+                            <br>
+                            <label class='form-label' for="sub">
+                                Other Subject :
+                            </label>
+                        </td>
+                        <td>
+                            <input id="other_subject" class="form-input" type="other_subject"
+                                placeholder="Enter subject of your choice" hidden>
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class='form-label' for="enter-Description">
+                                Share a feedback :
+                            </label>
+                        </td>
+                        <td>
+                            <textarea class="form-input" type="text" placeholder="Your feedback please"
+                                rows="4"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <div align-content="right">
+                    <input type='checkbox' name='c-box' id='c-box' width="20px">
+                    <label class="form-label" style="font-size:120%">
+                        I would like to receive
+                        promotional
+                        emails and news letters
+                    </label>
+                </div>
+                <br>
+                <button type="submit" name="button" class="input-button" id="submit_btn" disabled>
+                    <img src="stock/submit_button.png" height="32" width="62" />
+                </button>
+                <button name="button" class="input-button" id="cancel_btn">
+                    <img src="stock/cancel_button.png" height="32" width="62" />
+                </button>
+                <br>
+                <br>
+                <br>
+            </form>
+        </div>
+        <br>
+        <br>
+    </div>
+    <div style="text-align: center;">
+        <h6>
+            Site credits and Maintained by :
+            <strong>
+                @swap12875 | 2022
+            </strong>
+        </h6>
+    </div>
+
+    <script src="thor_script.js"></script>
+
+    <script>
+        const name_ = document.getElementById('name')
+        const email_ = document.getElementById('email')
+        const sub_list_ = document.getElementById('sub_list')
+        let other_sub_label = document.getElementById("other_subject_label")
+        let other_sub_input = document.getElementById("other_subject")
+        const submit_button = document.getElementById("submit_btn");
+        const cancel_button = document.getElementById("cancel_btn");
+
+        function otherSubject() {
+            if (sub_list_.value == 'Others') {
+                other_sub_label.style.display = "block";
+                other_sub_input.style.display = "block";
+            } else {
+                other_sub_label.style.display = "none";
+                other_sub_input.style.display = "none";
+            }
+        }
+
+        const checkEnableButton = () => {
+            submit_button.disabled = !(
+                name_.value &&
+                email_.value &&
+                sub_list_.value !== 'Select subject'
+            )
+        }
+
+        name_.addEventListener('change', checkEnableButton)
+        email_.addEventListener('change', checkEnableButton)
+        sub_list_.addEventListener('change', () => {
+            checkEnableButton;
+            otherSubject();
+        });
+
+        submit_button.onclick = function (evt) {
+            evt.preventDefault();
+            location.href = 'index.html';
+            window.alert(alert_message)
+        }
+
+        cancel_button.onclick = function (evt) {
+            evt.preventDefault();
+            location.href = 'index.html';
+            window.alert(cancel_contact_form)
+        }
+    </script>
+
+</body>
+
+</html>

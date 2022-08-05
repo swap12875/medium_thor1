@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="bodyBack">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Thor-home
+    </title>
+    <link rel="stylesheet" type="text/css" href="thor_style.css">
+</head>
+
+<body>
+    <div class="holder">
+        <fieldset>
+            <table style="width: 100%; border: none;">
+                <tr>
+                    <td style="vertical-align:bottom;">
+                        <div>
+                            <img class='biz-logo' src="stock\thor.jpg">
+                        </div>
+                    </td>
+                    <td class='right'>
+                        <label id="tag_line">
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <div>
+            <img src="stock\delivary_img.png" class="main-banner" alt="delivery_business">
+            <h2>
+                <span class="heading2-text">
+                    <strong>
+                        A brief on us
+                    </strong>
+                </span>
+            </h2>
+            <p class="about-contact-p" id="our_history" style="padding: 4%; justify-content:center;">
+            </p>
+        </div>
+        <hr>
+        <br>
+        <h2>
+            <img src="stock\food_delivery.png" class="banner" alt="our-services">
+            <span class="heading2-text">
+                <strong>
+                    Our Popular Services
+                </strong>
+            </span>
+        </h2>
+        <ul id="services_offered_">
+        </ul>
+        <br>
+        <hr>
+        <br>
+        <div>
+            <h2>
+                <img src="stock\contact_us_delivery.png" class="banner" alt="contact-use">
+                <span class="heading2-text">
+                    <strong>
+                        Feel free to contact us
+                    </strong>
+                </span>
+            </h2>
+            <p id="feel_free_to_contact" class="about-contact-p">
+            </p>
+            <a></a>
+            <table align="center" style="padding:0 0 50px 0">
+                <tr>
+                    <td class="form-label">Email us at:</td>
+                    <td class="normal-font">
+                        <a href="#" id="email_id" class="link">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-label">Call us:</td>
+                    <td class="normal-font">
+                        <a id="contact_number" class="link">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+            <div class="main-banner">
+                <a class="link" id="get_in_touch" href="contact_us.html">
+                    <strong>
+                        FILL UP&emsp;CONTACT&emsp;FORM
+                    </strong>
+                </a>
+            </div>
+            <br><br>
+        </div>
+    </div>
+    <div style="text-align: center;">
+        <h6>Site credits and Maintained by :
+            <strong> @swap12875 | 2022</strong>
+        </h6>
+    </div>
+    <script src="thor_script.js"></script>
+    <script>
+        const helpline_number = document.getElementById("contact_number")
+        const email_address = document.getElementById("email_id")
+        email_address.innerHTML = emailId
+        helpline_number.innerHTML = helpline
+        helpline_number.setAttribute("href", `tel://+ ${helpline}`)
+        document.getElementById("get_in_touch").onclick = function (evt) {
+            window.alert(alert_nav_to_contact_us)
+        }
+    </script>
+</body>
+
+</html>
